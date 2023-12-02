@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <title>Desktop - 3</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400"/>
+  <link rel="stylesheet" href="./styles/desktop-3.css"/>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['Exam', 'Numbers Taken'],
+        ['SAT',     11],
+        ['TOEFL',      2],
+        ['EUEE',  2],
+        ['ESLCE', 2],
+        ['GKT', 25]
+      ]);
+
+      var options = {
+        title: 'Tests Given So Far'
+      };
+
+      var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+      chart.draw(data, options);
+    }
+  </script>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Exam', 'Average Score(%)'],
+          ["SAT", 70],
+          ["TOEFL", 59],
+          ["EUEE", 88 ],
+          ["ECLCE", 78],
+          ["GKT",89 ]
+        ]);
+
+        var options = {
+          title: 'Average Exam Performance in different Tests(%)',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+
+
+
+
+
+</head>
+<body>
+<div class="desktop-3-Pss">
+  <div class="auto-group-jgff-96M">
+    <img class="logo-2-SbF" src="./assets/logo-2.png"/>
+    <p class="users-AGM"> Users</p>
+    <p class="exams-SzZ">Exams</p>
+    <p class="documents-MLq">Documents</p>
+    <p class="accounts-T8y">Accounts</p>
+  </div>
+  <div class="auto-group-ka4d-A3P">
+    <div class="auto-group-pdiu-hJD">
+      <div class="rectangle-13-DnM">
+      </div>
+      <img class="avatar2-1-knH" src="./assets/avatar2-1.png"/>
+      <div class="rectangle-14-s6D">
+      </div>
+      <div class="rectangle-15-b2D">
+      </div>
+      <div class="rectangle-16-uHo">
+      </div>
+      <p class="users-Eay">
+      
+      <br/>
+      458
+      <br/>
+      USERS
+      </p>
+      <p class="exams-KMX">
+      
+      <br/>
+      458
+      <br/>
+      Exams
+      </p>
+      <p class="examiners-2Wq">
+      
+      <br/>
+      458
+      <br/>
+      Examiners
+      </p>
+    </div>
+    <div class="auto-group-yvi1-8Jy">
+      <div class="rectangle-17-FeV">
+        <div id="piechart" style="width: 700px; height: 500px;"></div>
+
+      </div>
+      <div>
+        <div id="curve_chart" style="width: 700px; height: 500px"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card-w">
+  <i class="icon fa fa-users"></i>
+  <span class="number">156</span>
+  <span class="label">Total users</span>
+</div>
+</body>
