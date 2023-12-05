@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <title>Desktop - 4</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C600"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%2C600"/>
+  <link rel="stylesheet" href="./results.css"/>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {'packages':['table']});
+    google.charts.setOnLoadCallback(drawTable);
+    
+    google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart2);
+
+      function drawChart2() {
+        var data = google.visualization.arrayToDataTable([
+          ['Exam', 'Your Score(%)', 'Average Score(%)'],
+          ['SAT', 75, 58,],
+          ['TOEFL', 87, 92],
+          ['GKT', 77, 82]
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Your Performance',
+            subtitle: 'In comparision to the average score on each Exam',
+          }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+
+
+
+    function drawTable() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Exam Name');
+      data.addColumn('date', 'Date');
+      data.addColumn('number', 'Score(100%)');
+      // data.addColumn('number', 'Score(100%)');
+      data.addRows([
+        // ['GKT2019',  {v: '12/2/2023', f: '12/2/2023'}, 89]  
+        ["GKT2019",new Date(2023, 0, 1), 90]  ,["GKT2017",new Date(2023, 0, 1), 86]  ,["SAT2023",new Date(2023, 0, 1), 70]  ,["TOEFL2015",new Date(2023, 0, 1), 60]  
+        // ['GKT2019',  new Date(2023,2,1), 89]
+        // ['Jim',   {v:8000,   f: '$8,000'},  false]
+        // ['Alice', {v: 12500, f: '$12,500'}, true],
+        // ['Bob',   {v: 7000,  f: '$7,000'},  true]
+      ]);
+
+      var table = new google.visualization.Table(document.getElementById('table_div'));
+
+      table.draw(data, {showRowNumber: true, width:'100%',height: '100%'});
+    }
+
+      google.charts.setOnLoadCallback(drawStuff);
+
+      function drawStuff() {
+        var data = new google.visualization.arrayToDataTable([
+          ['Exam Type',"Score"],
+          ["SAT", 44],
+          ["TOEFL", 31],
+          ["IELTS", 72],
+          ["GKT", 98]
+        ]);
+
+        var options = {
+          title: 'Different International Exams',
+          
+          legend: { position: 'none' },
+          chart: { title:'Different International Exams',
+                   subtitle: 'Score Distribution' },
+          bars: 'horizontal', // Required for Material Bar Charts.
+          axes: {
+            x: {
+              0: { side: 'top', label: 'Score(100%)'} // Top x-axis.
+            }
+          },
+          bar: { groupWidth: "90%" }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('top_x_div'));
+        chart.draw(data, options);
+      };
+
+
+
+
+
+
+
+  </script>
+
+
+</head>
+<body>
+<div class="desktop-4-B6m">
+  <div class="auto-group-23xs-8Gu">
+    <div class="rectangle-12-GP7">
+    </div>
+    <img class="logo-2-DJM" src="logo.jpg"/>
+    <p class="documents-mKs">Documents</p>
+    <p class="all-exams-fg9">All Exams</p>
+    <p class="my-results-BPb">My Results</p>
+  </div>
+  <div class="auto-group-wsa1-snD">
+    <div class="auto-group-no3b-cjo">
+      <p class="exam-performance-Xbs">Exam Performance</p>
+      <img class="avatar2-1-SD3" src="./avatar2.jpg"/>
+      <p class="john-doe-ZYZ">John Doe</p>
+    </div>
+    <p class="filter-exam-results-here-GSy">Filter Exam Results Here</p>
+    <div class="auto-group-w6yk-PGh">
+      <div class="auto-group-y5wv-W6R">
+       
+        <select  class="auto-group-pzrf-1Yy">
+          <option value="" selected hidden>Exam Name</option>
+      <option value="International Exams">SAT</option>
+      </select>
+
+        <select  class="auto-group-fju3-VU9">
+          <option value="" selected hidden>Subject</option>
+      <option value="International Exams">General Knowledge</option>
+      </select>
+
+        <input type="date" class="auto-group-9fuh-Nnq"/>
+
+        <select  class="auto-group-5cuj-2Mb" >
+          <option value="" selected hidden>Score Range</option>
+          <option value="80-90">80-90</option>
+          </select>
+<button class="btn-primary auto-group-fawf-Gmj">Apply</button>
+      </div>
+      <p class="score-list-on-different-exams-94q">Score List On Different Exams</p>
+     
+        <div class="rectangle-32-e1b" id="table_div"></div>
+
+   
+      <div class="auto-group-brp5-ZPT">
+        <p class="performance-analytics-HqF">Performance Analytics</p>
+        <img class="analytics-1-CSR" src="./analytics.png"/>
+      </div>
+      <div class="auto-group-qbwm-weu">
+ 
+          <div class="rectangle-33-6Gu" id="top_x_div" ></div>
+
+          <div id="columnchart_material" class="rectangle-34-2AZ" ></div>
+
+          </div>
+    </div>
+    <div class="rectangle-35-ZgH">
+    </div>
+  </div>
+</div>
+</body>
